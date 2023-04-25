@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+		input{
+			width: 100%;
+		}
+		body{
+			background-image: url(bakingbackground.jpeg) ;
+		}
+	</style>
+	<title>Exercise 4</title>
+</head>
+<body>
+	<br>
+	<div class="container text-center bg-light">
+
+	<h1>Baking Conversion Table</h1>
+		<br>
+		<h4>Enter Cup Measurement</h4>
+		<form>
+			<input type="text" id="cup">
+			<br><br>
+			<button type="submit" onclick="compute()" class="btn btn-primary btn-block">Calculate!</button>
+			<br>
+		</form>
+
+	<script type="text/javascript">
+		function compute(){
+			let	num1 = document.getElementById("cup").value;
+			//tablespoon
+			let num2 = 16;
+			let product = (num1 * num2);
+			//teaspoon
+			let num3 = 48;
+			let product2 = (num1 * num3)
+			//ounces
+			let num4 = 8
+			let product3 = (num1 * num4)
+
+			window.alert("The Length in Tablespoons : " + product)
+			window.alert("The Length in Teaspoons : " + product2)
+			window.alert("The Length in Ounces : " + product3)
+
+		}
+	</script>
+
+	</div>
+</body>
+</html>
