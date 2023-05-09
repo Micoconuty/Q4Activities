@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<style type="text/css">
+		h1, h2, h3{
+			font-family: Oswald;
+		}
+		img{
+			width: 150px;
+		}
+		#fig1,#fig2{
+			width: 500px;
+		}
+		body{
+			background-color: #497174;
+			font-family:Lexend Deca ;
+		}
+		#button{
+			background-color: #EB6440;
+		}
+
+	</style>
+
+	<title>Exercise 5</title>
+</head>
+<body>
+<div class="container mt-3 bg-light">
+	<br>
+	<h1>All About Electricity</h1>
+		<p id="DT"></p>
+			<script type="text/javascript">
+				const D = new Date();
+				document.getElementById('DT').innerHTML = D;
+			</script>
+
+	<h2>What makes a light bulb light up?</h2>
+	<p>When a light bulb connects to an electrical power supply, an electrical current flows from one metal contact to the other. As the current travels through the wires and the filament, the filament heats up to the point where it begins to emit photons, which are small packets of visible light.</p>
+
+		<img src="switchOFF.png" id="bulb" class="mx-auto d-block">
+		<br>
+		<button class="btn btn-block text-light" onmouseover="On()" onmouseout="Off()" id="button">TURN ON</button>
+		<audio id="audio" src="turnonlights.mp3"></audio>
+
+	<br><br>
+	<h2>Ohm's Law</h2>	
+	<p>An electric circuit is formed when a conductive path is created to allow electric charge to continuously move. This continuous movement of electric charge through the conductors of a circuit is called a current, and it is often referred to in terms of “flow,” just like the flow of a liquid through a hollow pipe.</p>
+		<img src="fig1.png" id="fig1">
+		<p>Calculate the values of current (I) in a circuit, given Voltage (E) and resistance (R): <strong>T = E/R</strong></p>
+		<div class="row">
+			<div class="col-6">
+				<img src="fig2.png" id="fig2">
+			</div>
+			<div class="col-6 mt-5">
+				<h5>Enter Voltage(E): <h5><input type="text" id="V" class="form-control"><br>
+				<h5>Enter Resistance(R): <h5><input type="text" id="R" class="form-control"><br>
+				<input type="submit" value="COMPUTE" class="btn text-light" onclick="compute()" id="button">
+				<h5 id="output"></h5>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			function On(){
+				document.getElementById('bulb').src = "switchON.png";
+				document.getElementById('audio').play();
+			}
+			function Off(){
+				document.getElementById('bulb').src = "switchOFF.png"
+				document.getElementById('audio').pause()
+			}
+			function compute(){
+				let Voltage = document.getElementById('V').value;
+				let Resistance = document.getElementById('R').value;
+				let Current = Voltage/Resistance;
+				document.getElementById('output').innerHTML ="The Current(I) is: " + Current;
+			}
+		</script>
+
+		<br><br>
+		<h3>Referenes:</h3>
+			<p><a href="https://www.wonderopolis.org/wonder/what-makes-a-light-bulb-light-up">Wonderopolis</a>,
+			<a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-2/voltage-current-resistance-relate/">AllAboutCircuits</a>
+			</p>
+		<br>
+</div>
+<br>
+</body>
+</html>
